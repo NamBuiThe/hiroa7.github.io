@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS LISTENING SCRIPT STRUCTURE — BRUTALISM</title>
+    <style>
+        /* BRUTALIST CORE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ffffff;
+            font-family: 'Courier New', 'IBM Plex Mono', 'Fira Code', monospace;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #000000;
+            padding: 2rem;
+        }
+
+        /* main container – brutal grid */
+        .brutal-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            border: 3px solid #000;
+            background: #fff;
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        /* header */
+        .brutal-header {
+            border-bottom: 3px solid #000;
+            padding: 1.5rem;
+            background: #f5f5f5;
+        }
+        .brutal-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .brutal-header p {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: #333;
+        }
+
+        /* navigation row */
+        .brutal-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #fff;
+            border-bottom: 3px solid #000;
+            align-items: flex-end;
+        }
+        .nav-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            min-width: 160px;
+        }
+        .nav-group label {
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        select, button {
+            font-family: 'Courier New', monospace;
+            background: #fff;
+            border: 2px solid #000;
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: none;
+        }
+        select:focus, button:focus {
+            outline: none;
+            background: #000;
+            color: #fff;
+        }
+        button {
+            background: #000;
+            color: #fff;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+        button:active {
+            transform: translate(2px, 2px);
+            box-shadow: none;
+        }
+
+        /* two-column brutal layout */
+        .brutal-split {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 3px solid #000;
+        }
+        .script-panel {
+            flex: 1;
+            min-width: 280px;
+            border-right: 3px solid #000;
+            background: #fefefe;
+        }
+        .questions-panel {
+            flex: 1;
+            min-width: 320px;
+            background: #fff;
+        }
+        .panel-title {
+            font-weight: 700;
+            background: #eee;
+            padding: 1rem;
+            border-bottom: 2px solid #000;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+        .scroll-area {
+            height: 500px;
+            overflow-y: auto;
+            padding: 1.2rem;
+        }
+        .script-content {
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+        }
+        .question-group {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 1.2rem;
+        }
+        .question-group h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: #000;
+            color: #fff;
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+        }
+        .question-item {
+            margin-bottom: 1.5rem;
+            border-left: 2px solid #000;
+            padding-left: 0.8rem;
+        }
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        input[type="text"], .mcq-group label, select.match-select {
+            font-family: monospace;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 2px solid #000;
+            background: #fff;
+            margin-top: 5px;
+        }
+        .mcq-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 6px;
+        }
+        .mcq-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        select.match-select {
+            width: 100%;
+            padding: 6px;
+            margin-top: 4px;
+            border: 2px solid #000;
+        }
+        .feedback-area {
+            margin-top: 1.2rem;
+            padding: 1rem;
+            background: #f0f0f0;
+            border-left: 4px solid #000;
+            font-size: 0.8rem;
+        }
+        .warning-note {
+            color: #d14423;
+            font-weight: bold;
+        }
+        hr {
+            border-top: 2px solid #000;
+            margin: 1rem 0;
+        }
+        footer {
+            padding: 1rem;
+            text-align: center;
+            background: #f5f5f5;
+            border-top: 3px solid #000;
+            font-size: 0.7rem;
+        }
+        @media (max-width: 800px) {
+            .brutal-split {
+                flex-direction: column;
+            }
+            .script-panel {
+                border-right: none;
+                border-bottom: 3px solid #000;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="brutal-container">
+    <div class="brutal-header">
+        <h1>IELTS LISTENING SCRIPT STRUCTURE</h1>
+        <p>brutalist interface · full control · part / topic / case · answer validation</p>
+    </div>
+
+    <div class="brutal-nav">
+        <div class="nav-group">
+            <label>PART</label>
+            <select id="partSelect"></select>
+        </div>
+        <div class="nav-group">
+            <label>TOPIC</label>
+            <select id="topicSelect"></select>
+        </div>
+        <div class="nav-group">
+            <label>CASE</label>
+            <select id="caseSelect"></select>
+        </div>
+        <div class="nav-group">
+            <button id="checkAnswersBtn">CHECK ANSWERS</button>
+        </div>
+    </div>
+
+    <div class="brutal-split">
+        <!-- LEFT: SCRIPT PANEL -->
+        <div class="script-panel">
+            <div class="panel-title">[ SCRIPT ]</div>
+            <div class="scroll-area" id="scriptContainer">
+                <div class="script-content" id="scriptText">
+                    <!-- script will be injected here -->
+                    Select a part, topic and case.
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: QUESTIONS PANEL -->
+        <div class="questions-panel">
+            <div class="panel-title">[ QUESTIONS ]</div>
+            <div class="scroll-area" id="questionsContainer">
+                <!-- dynamic questions will appear here (completion, MCQ, matching) -->
+            </div>
+            <div id="feedbackArea" class="feedback-area"></div>
+        </div>
+    </div>
+    <footer>brutalist framework · each case contains script + questions + vocabulary/collocation · check answers only when all answered</footer>
+</div>
+
+<script>
+    // --------------------------------------------------------------
+    // MOCK DATA – STRUCTURE FOR PART 3 (ONE topic, ONE case for debug)
+    // Part 3 contains: MCQ, Matching, Note/table completion, Sentence completion, Short answer
+    // --------------------------------------------------------------
+    const LISTENING_DB = {
+
+
+        part3: {
+            name: "Part 3 – Academic discussion",
+            topics: {
+                "Environmental Science Project": {
+                    cases: {
+                        "Case 1 – Carbon footprint survey": {
+                            script: "Tutor: Good morning, team. Let's discuss the methodology for your environmental science assignment. Sarah, you've been analyzing the carbon footprint survey results?\nSarah: Yes. We collected 200 responses, but I'm concerned about the sample bias – most participants were university students.\nTutor: That's a valid point. How did you distribute the questionnaire?\nJames: We used social media and emailed the faculty list. So mainly young adults.\nTutor: For the final report, you must address this limitation. What about the transport data?\nSarah: We asked about daily commute distance and mode. The majority use buses or bicycles, but 30% said they drive alone.\nTutor: Interesting. When you compare with national averages, car usage is lower here. Any plans to visualise the data?\nJames: We'll create a bar chart showing transport mode by age group. Also a line graph for carbon emissions over the week.\nTutor: Great. The discussion section should mention that campus location encourages sustainable travel. Don't forget to reference the local council's 2023 transport report.\nSarah: Already found it. We're also thinking of adding a recommendation for a carpool scheme.\nTutor: Excellent. I'd like you to prepare a 10-minute presentation as well. Focus on three key findings. Now, any issues with the timeline?\nJames: The data analysis is almost done, but we need two more days for the graphs.\nTutor: That's fine. Submit the draft by Friday 5pm. And short answers to the peer review questions? \nSarah: We'll complete them tomorrow. Thanks, tutor.",
+                            questions: {
+                                mcq: [
+                                    { id: "mcq1", text: "What is the main concern about the survey results?", options: ["Low response rate", "Sample bias (mostly students)", "Incomplete data"], answer: "Sample bias (mostly students)" },
+                                    { id: "mcq2", text: "According to James, what percentage of respondents drive alone?", options: ["20%", "30%", "40%"], answer: "30%" }
+                                ],
+                                matching: {
+                                    instructions: "Match each person with their task or opinion.",
+                                    items: [
+                                        { id: "match1", text: "Sarah", options: ["Mentioned carpool scheme", "Concerned about sample bias", "Will create the graphs"], answer: "Concerned about sample bias" },
+                                        { id: "match2", text: "James", options: ["Will create bar chart and line graph", "Will write discussion section", "References local council report"], answer: "Will create bar chart and line graph" }
+                                    ]
+                                },
+                                completion: [
+                                    { id: "comp1", text: "The survey collected _______________ responses.", answer: "200" },
+                                    { id: "comp2", text: "The tutor suggests reading the local council's _______________ report (year).", answer: "2023" }
+                                ],
+                                sentenceCompletion: [
+                                    { id: "sent1", text: "The presentation should focus on _______________ key findings.", answer: "three" }
+                                ],
+                                shortAnswer: [
+                                    { id: "short1", text: "What additional scheme do the students want to recommend?", answer: "carpool scheme" }
+                                ]
+                            },
+                            vocabCollocation: "sample bias, carbon footprint, commute mode, peer review, timeline, visualise data, carpool scheme"
+                        }
+                        // Additional cases can be added later following same pattern
+                    }
+                },
+                "Renewable Energy Debate": { cases: {} },
+                "Marketing Research Interview": { cases: {} },
+                "Psychology Study Design": { cases: {} },
+                "Urban Planning Fieldwork": { cases: {} }
+            }
+        },
+        // Placeholder for other parts (1,2,4) – to be extended later
+        part1: {
+    name: "Part 1 – Social context",
+    topics: {
+        "Accommodation": {
+            cases: {
+                    "Case 1 – Renting a flat (City Centre)": {
+      "script": "Agent: Good morning, City Rentals. How may I help you?\nClient: I'm looking for a one-bedroom flat in the city centre. My budget is around 1200 per month.\nAgent: I have a flat on Grove Street. Rent is 1150, plus bills. It has a modern kitchen and a balcony.\nClient: Is it furnished?\nAgent: Partly. Bed and wardrobe are included, but you'll need a sofa and table.\nClient: And the deposit?\nAgent: One month's rent, so 1150. You'll also need a reference from your employer.\nClient: When can I view it?\nAgent: Tomorrow at 11 a.m. Please bring identification.\nClient: Great. I'll text you my name and number.\nAgent: Perfect. I'll send you the address by text.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "What type of flat is the client looking for?", "options": ["studio", "one-bedroom", "two-bedroom"], "answer": "one-bedroom" },
+          { "id": "mcq2", "text": "What is included in the partly furnished flat?", "options": ["sofa and table", "bed and wardrobe", "kitchen and balcony"], "answer": "bed and wardrobe" },
+          { "id": "mcq3", "text": "What document does the agent ask for?", "options": ["passport", "reference from employer", "bank statement"], "answer": "reference from employer" }
+        ],
+        "matching": {
+          "instructions": "Match the information with the correct detail.",
+          "items": [
+            { "id": "match1", "text": "Monthly rent (plus bills)", "options": ["£1150", "£1200", "£1100"], "answer": "£1150" },
+            { "id": "match2", "text": "Deposit amount", "options": ["£1150", "£1200", "£1000"], "answer": "£1150" },
+            { "id": "match3", "text": "Viewing time", "options": ["10 a.m.", "11 a.m.", "12 p.m."], "answer": "11 a.m." },
+            { "id": "match4", "text": "Method to receive address", "options": ["email", "text", "phone call"], "answer": "text" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Client's budget: £_______________ per month", "answer": "1200" },
+          { "id": "comp2", "text": "Street name: _______________ Street", "answer": "Grove" },
+          { "id": "comp3", "text": "The flat has a modern _______________ and a balcony", "answer": "kitchen" },
+          { "id": "comp4", "text": "Viewing day: _______________", "answer": "tomorrow" },
+          { "id": "comp5", "text": "The client needs to bring _______________", "answer": "identification" }
+        ]
+      },
+      "vocabCollocation": "one-bedroom apartment, budget, furnished, deposit, reference, identification, viewing"
+    },
+                "Case 2 – Homestay registration": {
+      "script": "Coordinator: Hello, International House. You're interested in a homestay?\nStudent: Yes. I'm arriving on September 5th, staying for one semester.\nCoordinator: Any dietary needs?\nStudent: I'm vegetarian, no pork.\nCoordinator: We have a family in Northwood. They offer a single room with shared bathroom. Meals: breakfast and dinner included, lunch self-service.\nStudent: What about wifi?\nCoordinator: Included. Also use of washing machine once a week.\nStudent: How far from the university?\nCoordinator: 20 minutes by bus. The bus stop is right outside.\nStudent: Is there a curfew?\nCoordinator: No, but quiet hours after 10 p.m.\nStudent: Sounds good. I'll take it.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "What is the student's dietary restriction?", "options": ["no fish", "vegetarian", "no dairy"], "answer": "vegetarian" },
+          { "id": "mcq2", "text": "Where is the homestay located?", "options": ["Northwood", "Southwood", "Eastwood"], "answer": "Northwood" },
+          { "id": "mcq3", "text": "How often can the student use the washing machine?", "options": ["once a week", "twice a week", "every day"], "answer": "once a week" }
+        ],
+        "matching": {
+          "instructions": "Match the information with the correct detail.",
+          "items": [
+            { "id": "match1", "text": "Arrival date", "options": ["September 4th", "September 5th", "September 6th"], "answer": "September 5th" },
+            { "id": "match2", "text": "Length of stay", "options": ["one month", "one semester", "one year"], "answer": "one semester" },
+            { "id": "match3", "text": "Evening meal included", "options": ["breakfast", "lunch", "dinner"], "answer": "dinner" },
+            { "id": "match4", "text": "Quiet hours start at", "options": ["9 p.m.", "10 p.m.", "11 p.m."], "answer": "10 p.m." }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Student's room type: _______________ room", "answer": "single" },
+          { "id": "comp2", "text": "Travel time to university: _______________ minutes by bus", "answer": "20" },
+          { "id": "comp3", "text": "The bus stop is right _______________", "answer": "outside" },
+          { "id": "comp4", "text": "Shared _______________", "answer": "bathroom" },
+          { "id": "comp5", "text": "Washing machine usage: _______________ a week", "answer": "once" }
+        ]
+      },
+      "vocabCollocation": "homestay, dietary needs, shared bathroom, self-service, quiet hours, curfew"
+                },
+	"Case 4 – Hotel booking for business trip": {
+      "script": "Receptionist: Grand Hotel, good morning. How may I assist?\nGuest: I need a single room for two nights, from Monday 14th to Wednesday 16th.\nReceptionist: We have a standard single at £119 per night, or executive at £159 with breakfast.\nGuest: Standard is fine. Does it have a desk?\nReceptionist: Yes, and free wifi. Check-in from 2 p.m., check-out by 11 a.m.\nGuest: I'll need a wake-up call at 7 a.m. on Wednesday.\nReceptionist: Noted. Do you need parking?\nGuest: Yes, how much?\nReceptionist: £12 per day. Could I have your credit card to guarantee?\nGuest: Sure. My name is David Chen.\nReceptionist: Thank you. Booking confirmed.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "What type of room does the guest book?", "options": ["standard single", "executive single", "double"], "answer": "standard single" },
+          { "id": "mcq2", "text": "What is the check-out time?", "options": ["10 a.m.", "11 a.m.", "12 p.m."], "answer": "11 a.m." },
+          { "id": "mcq3", "text": "What is the guest's surname?", "options": ["Chen", "Wang", "Li"], "answer": "Chen" }
+        ],
+        "matching": {
+          "instructions": "Match the details.",
+          "items": [
+            { "id": "match1", "text": "Number of nights", "options": ["one", "two", "three"], "answer": "two" },
+            { "id": "match2", "text": "Wake-up call time", "options": ["6 a.m.", "7 a.m.", "8 a.m."], "answer": "7 a.m." },
+            { "id": "match3", "text": "Parking fee per day", "options": ["£10", "£12", "£15"], "answer": "£12" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Arrival date: Monday _______________", "answer": "14th" },
+          { "id": "comp2", "text": "Executive room includes _______________", "answer": "breakfast" },
+          { "id": "comp3", "text": "Room feature: a _______________ and free wifi", "answer": "desk" },
+          { "id": "comp4", "text": "Check-in from _______________ p.m.", "answer": "2" },
+          { "id": "comp5", "text": "Guest's first name: _______________", "answer": "David" }
+        ]
+      },
+      "vocabCollocation": "business trip, standard single, wake-up call, parking fee, booking confirmed"
+    },
+	"Case 5 – Hostel for backpackers": {
+      "script": "Hostel reception: Backpackers' Inn, good evening.\nTraveler: Hi. I need a bed for two nights in a female-only dorm.\nReceptionist: We have a 6-bed female dorm at £30 per night. Sheets and towel included.\nTraveler: Is breakfast included?\nReceptionist: Continental breakfast is £4 extra, but there's a free kitchen.\nTraveler: I'll skip breakfast. Do you have lockers?\nReceptionist: Yes, but you need your own padlock.\nTraveler: Can I check in after 10 p.m.?\nReceptionist: Reception is 24/7, no problem.\nTraveler: Great. Name: Anna Kowalski.\nReceptionist: Total for two nights is £60. Please pay now.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "What type of dorm does the traveler want?", "options": ["mixed", "female-only", "male-only"], "answer": "female-only" },
+          { "id": "mcq2", "text": "What is included in the price?", "options": ["sheets and towel", "breakfast", "locker"], "answer": "sheets and towel" },
+          { "id": "mcq3", "text": "How much is breakfast?", "options": ["£3", "£4", "£5"], "answer": "£4" }
+        ],
+        "matching": {
+          "instructions": "Match the correct information.",
+          "items": [
+            { "id": "match1", "text": "Number of nights", "options": ["one", "two", "three"], "answer": "two" },
+            { "id": "match2", "text": "Nightly rate", "options": ["£25", "£30", "£35"], "answer": "£30" },
+            { "id": "match3", "text": "Total cost", "options": ["£50", "£60", "£70"], "answer": "£60" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Dorm capacity: _______________ beds", "answer": "6" },
+          { "id": "comp2", "text": "Traveler needs her own _______________", "answer": "padlock" },
+          { "id": "comp3", "text": "Reception open: _______________ hours", "answer": "24/7" },
+          { "id": "comp4", "text": "Guest's last name: _______________", "answer": "Kowalski" },
+          { "id": "comp5", "text": "There is a free _______________", "answer": "kitchen" }
+        ]
+      },
+      "vocabCollocation": "backpackers, female-only dorm, sheets included, padlock, 24/7 reception"
+    },
+	"Case 6 – Renting a shared apartment": {
+      "script": "Agent: Hello, FlatShare UK. How can I help?\nTenant: I'm looking for a double room in a shared flat, near the train station.\nAgent: We have a room in a 3-bed flat on King's Road. Rent £550 per month all bills included.\nTenant: Who are the flatmates?\nAgent: Two working professionals, non-smokers. Shared bathroom and living room.\nTenant: Is the room furnished?\nAgent: Yes, bed, desk, and wardrobe. Kitchen is fully equipped.\nTenant: What about internet?\nAgent: Gigabit fibre included. Also a cleaner comes every two weeks.\nTenant: Sounds good. Can I view it this Saturday?\nAgent: 2 p.m. Please bring a copy of your ID and proof of income.\nTenant: Will do. Thanks.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "What type of room is the tenant looking for?", "options": ["single room", "double room", "studio"], "answer": "double room" },
+          { "id": "mcq2", "text": "What is included in the rent?", "options": ["bills only", "bills and cleaner", "bills, cleaner, internet"], "answer": "bills, cleaner, internet" },
+          { "id": "mcq3", "text": "When is the viewing?", "options": ["Friday", "Saturday", "Sunday"], "answer": "Saturday" }
+        ],
+        "matching": {
+          "instructions": "Match the detail.",
+          "items": [
+            { "id": "match1", "text": "Monthly rent", "options": ["£500", "£550", "£600"], "answer": "£550" },
+            { "id": "match2", "text": "Number of flatmates", "options": ["one", "two", "three"], "answer": "two" },
+            { "id": "match3", "text": "Cleaning frequency", "options": ["weekly", "every two weeks", "monthly"], "answer": "every two weeks" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Street name: _______________ Road", "answer": "King's" },
+          { "id": "comp2", "text": "Flat type: _______________ bedrooms", "answer": "3" },
+          { "id": "comp3", "text": "Viewing time: _______________ p.m.", "answer": "2" },
+          { "id": "comp4", "text": "Documents needed: ID and proof of _______________", "answer": "income" },
+          { "id": "comp5", "text": "Flatmates are non-_______________", "answer": "smokers" }
+        ]
+      },
+      "vocabCollocation": "shared flat, double room, bills included, flatmates, proof of income, furnished"
+    },
+	"Case 7 – Short-term rental for internship": {
+      "script": "Landlord: Hi, I'm calling about the short-term rental ad.\nTenant: Yes, I need a furnished studio for 3 months, starting July 1st.\nLandlord: I have a studio near the business park. Rent £800 per month, utilities not included.\nTenant: What about electricity and water?\nLandlord: Approx £80 per month. Internet is separate, about £25.\nTenant: Is there parking?\nLandlord: Free street parking. The studio has a small kitchenette and ensuite shower.\nTenant: Can I pay month by month?\nLandlord: Yes, but a deposit of £500 is required.\nTenant: Okay. Can I move in on June 30th?\nLandlord: Sure, I'll prepare the contract.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "How long does the tenant need the studio?", "options": ["2 months", "3 months", "4 months"], "answer": "3 months" },
+          { "id": "mcq2", "text": "What is included in the studio?", "options": ["kitchenette and ensuite", "full kitchen", "shared bathroom"], "answer": "kitchenette and ensuite" },
+          { "id": "mcq3", "text": "What is the deposit amount?", "options": ["£400", "£500", "£600"], "answer": "£500" }
+        ],
+        "matching": {
+          "instructions": "Match the cost.",
+          "items": [
+            { "id": "match1", "text": "Rent per month", "options": ["£700", "£800", "£900"], "answer": "£800" },
+            { "id": "match2", "text": "Estimated utilities", "options": ["£70", "£80", "£90"], "answer": "£80" },
+            { "id": "match3", "text": "Internet cost", "options": ["£20", "£25", "£30"], "answer": "£25" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Move-in date: _______________ 1st", "answer": "July" },
+          { "id": "comp2", "text": "Studio location: near the _______________ park", "answer": "business" },
+          { "id": "comp3", "text": "Parking: free _______________ parking", "answer": "street" },
+          { "id": "comp4", "text": "Payment schedule: month by _______________", "answer": "month" },
+          { "id": "comp5", "text": "Contract prepared by _______________", "answer": "landlord" }
+        ]
+      },
+      "vocabCollocation": "short-term rental, furnished studio, utilities, deposit, kitchenette, ensuite"
+    },
+	"Case 8 – University family housing": {
+      "script": "Officer: University Family Housing, good afternoon.\nApplicant: We're a married couple with one child, need a 2-bedroom apartment on campus.\nOfficer: We have a limited number in Graduate College. Rent is £950 per month including water and heating.\nApplicant: Is electricity separate?\nOfficer: Yes, metered. About £60-80 depending on usage. Gas is included.\nApplicant: Is there a playground nearby?\nOfficer: There's a small playground behind the building. Also a nursery on campus.\nApplicant: What about laundry?\nOfficer: Shared laundry room in the basement, £2 per wash.\nApplicant: Can we have a cat?\nOfficer: Sorry, no pets except fish.\nApplicant: Okay, we'll apply.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "How many bedrooms do they need?", "options": ["1", "2", "3"], "answer": "2" },
+          { "id": "mcq2", "text": "What is included in the rent?", "options": ["water and heating", "electricity and gas", "all bills"], "answer": "water and heating" },
+          { "id": "mcq3", "text": "Which pet is allowed?", "options": ["cat", "dog", "fish"], "answer": "fish" }
+        ],
+        "matching": {
+          "instructions": "Match the facility.",
+          "items": [
+            { "id": "match1", "text": "Laundry cost per wash", "options": ["£1", "£2", "£3"], "answer": "£2" },
+            { "id": "match2", "text": "Playground location", "options": ["front of building", "behind the building", "across the street"], "answer": "behind the building" },
+            { "id": "match3", "text": "Electricity estimated", "options": ["£40-60", "£60-80", "£80-100"], "answer": "£60-80" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Apartment type: _______________ College", "answer": "Graduate" },
+          { "id": "comp2", "text": "Rent includes water and _______________", "answer": "heating" },
+          { "id": "comp3", "text": "Nursery located on _______________", "answer": "campus" },
+          { "id": "comp4", "text": "Laundry room in the _______________", "answer": "basement" },
+          { "id": "comp5", "text": "No pets except _______________", "answer": "fish" }
+        ]
+      },
+      "vocabCollocation": "family housing, on-campus, metered electricity, playground, nursery, shared laundry"
+    },
+	"Case 9 – Booking a serviced apartment": {
+      "script": "Agent: CityStay Serviced Apartments, how can I help?\nGuest: I need a 1-bedroom serviced apartment for 5 nights, from Oct 20 to 25.\nAgent: We have one in the city centre at £140 per night. Includes weekly cleaning, towels, and wifi.\nGuest: Is there a kitchen?\nAgent: Full kitchen with oven, microwave, dishwasher. Also a washing machine in the unit.\nGuest: What about a gym?\nAgent: Yes, free access to our 24h fitness room. Also a rooftop terrace.\nGuest: Do I need to pay upfront?\nAgent: We require 50% deposit to confirm, balance on arrival.\nGuest: Fine. Can I check in after 8 p.m.?\nAgent: Yes, we have a key safe. I'll email instructions.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "How many nights is the booking?", "options": ["4", "5", "6"], "answer": "5" },
+          { "id": "mcq2", "text": "What is included in the price?", "options": ["cleaning and wifi", "cleaning, wifi, gym", "cleaning, wifi, gym, parking"], "answer": "cleaning, wifi, gym" },
+          { "id": "mcq3", "text": "What deposit is required?", "options": ["25%", "50%", "100%"], "answer": "50%" }
+        ],
+        "matching": {
+          "instructions": "Match the detail.",
+          "items": [
+            { "id": "match1", "text": "Nightly rate", "options": ["£120", "£140", "£160"], "answer": "£140" },
+            { "id": "match2", "text": "Check-in method after 8 p.m.", "options": ["reception", "key safe", "concierge"], "answer": "key safe" },
+            { "id": "match3", "text": "Unit includes", "options": ["oven and microwave", "oven and fridge", "microwave and toaster"], "answer": "oven and microwave" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Apartment type: _______________ bedroom", "answer": "1" },
+          { "id": "comp2", "text": "Dates: October 20 to _______________", "answer": "25" },
+          { "id": "comp3", "text": "Free facility: 24h _______________ room", "answer": "fitness" },
+          { "id": "comp4", "text": "Also a rooftop _______________", "answer": "terrace" },
+          { "id": "comp5", "text": "Balance paid on _______________", "answer": "arrival" }
+        ]
+      },
+      "vocabCollocation": "serviced apartment, weekly cleaning, key safe, fitness room, rooftop terrace, deposit"
+    },
+	"Case 10 – Airbnb for vacation": {
+      "script": "Host: Hi, you're inquiring about the beachfront studio?\nGuest: Yes, for 3 adults, July 10-15. Is it available?\nHost: Yes, those dates are free. Price is $180 per night plus $50 cleaning fee.\nGuest: Does it have two beds?\nHost: One queen bed and a sofa bed. Fully equipped kitchen, balcony with ocean view.\nGuest: Parking?\nHost: Free on-street. Also beach chairs and umbrella provided.\nGuest: Cancellation policy?\nHost: Free cancellation up to 7 days before arrival.\nGuest: Great. I'll book. Could you send the exact address?\nHost: I'll send it after booking confirmation.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "How many adults are staying?", "options": ["2", "3", "4"], "answer": "3" },
+          { "id": "mcq2", "text": "What is the cleaning fee?", "options": ["$40", "$50", "$60"], "answer": "$50" },
+          { "id": "mcq3", "text": "What is provided for the beach?", "options": ["towels and umbrella", "chairs and umbrella", "chairs and towels"], "answer": "chairs and umbrella" }
+        ],
+        "matching": {
+          "instructions": "Match the information.",
+          "items": [
+            { "id": "match1", "text": "Nightly rate", "options": ["$160", "$180", "$200"], "answer": "$180" },
+            { "id": "match2", "text": "Cancellation deadline (days before)", "options": ["5", "7", "10"], "answer": "7" },
+            { "id": "match3", "text": "Bed types", "options": ["two queens", "queen and sofa bed", "two twins"], "answer": "queen and sofa bed" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Location: _______________ studio", "answer": "beachfront" },
+          { "id": "comp2", "text": "Dates: July _______________ to 15", "answer": "10" },
+          { "id": "comp3", "text": "Balcony view: _______________", "answer": "ocean" },
+          { "id": "comp4", "text": "Parking: free on-_______________", "answer": "street" },
+          { "id": "comp5", "text": "Address sent after _______________", "answer": "confirmation" }
+        ]
+      },
+      "vocabCollocation": "beachfront, cleaning fee, sofa bed, cancellation policy, ocean view, booking confirmation"
+    },
+	"Case 11 – Renting a room in a guesthouse": {
+      "script": "Owner: Rose Guesthouse, speaking.\nGuest: I'd like a single room for one week, from August 5th.\nOwner: We have a single with shared bathroom at £35 per night. Breakfast is £6 extra.\nGuest: Is there a curfew?\nOwner: No, but front door locks at 11 p.m. You get a key.\nGuest: Can I use the kitchen?\nOwner: For light meals only, between 12 and 8 p.m. No cooking after 9 p.m.\nGuest: What about laundry?\nOwner: £5 per load, done by us.\nGuest: Fine. I'll take it. Do I pay in advance?\nOwner: Yes, 50% deposit now, rest on arrival.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "How long is the stay?", "options": ["5 days", "7 days", "10 days"], "answer": "7 days" },
+          { "id": "mcq2", "text": "What is the cost of breakfast?", "options": ["£5", "£6", "£7"], "answer": "£6" },
+          { "id": "mcq3", "text": "When does the front door lock?", "options": ["10 p.m.", "11 p.m.", "12 a.m."], "answer": "11 p.m." }
+        ],
+        "matching": {
+          "instructions": "Match the rule or price.",
+          "items": [
+            { "id": "match1", "text": "Nightly rate (room only)", "options": ["£30", "£35", "£40"], "answer": "£35" },
+            { "id": "match2", "text": "Laundry cost", "options": ["£3", "£4", "£5"], "answer": "£5" },
+            { "id": "match3", "text": "Kitchen closing time", "options": ["8 p.m.", "9 p.m.", "10 p.m."], "answer": "9 p.m." }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Month of stay: _______________", "answer": "August" },
+          { "id": "comp2", "text": "Guestroom type: _______________ room", "answer": "single" },
+          { "id": "comp3", "text": "Bathroom is _______________", "answer": "shared" },
+          { "id": "comp4", "text": "Deposit required: _______________%", "answer": "50" },
+          { "id": "comp5", "text": "Key provided for _______________ door", "answer": "front" }
+        ]
+      },
+      "vocabCollocation": "guesthouse, shared bathroom, curfew, light meals, laundry service, deposit"
+    },
+	"Case 12 – Student summer housing": {
+      "script": "Coordinator: Summer Accommodation Office.\nStudent: I need a room from June 15 to August 10 for an internship.\nCoordinator: We have shared houses near campus. £120 per week, all bills included.\nStudent: Is it single or shared room?\nCoordinator: Single room, shared kitchen and bathroom. There's also a garden.\nStudent: Bed linen?\nCoordinator: Provided, but you need your own towels.\nStudent: Can I have guests overnight?\nCoordinator: Max 3 nights per week, and you must inform the house manager.\nStudent: Wifi?\nCoordinator: Free, 100Mbps.\nStudent: Sounds perfect.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "When does the student need the room until?", "options": ["July 31", "August 10", "August 15"], "answer": "August 10" },
+          { "id": "mcq2", "text": "What is provided?", "options": ["bed linen", "towels", "both"], "answer": "bed linen" },
+          { "id": "mcq3", "text": "Guest overnight limit (nights per week)", "options": ["2", "3", "4"], "answer": "3" }
+        ],
+        "matching": {
+          "instructions": "Match the detail.",
+          "items": [
+            { "id": "match1", "text": "Weekly rent", "options": ["£110", "£120", "£130"], "answer": "£120" },
+            { "id": "match2", "text": "WiFi speed", "options": ["50Mbps", "100Mbps", "200Mbps"], "answer": "100Mbps" },
+            { "id": "match3", "text": "Must inform", "options": ["roommate", "house manager", "landlord"], "answer": "house manager" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Accommodation type: shared _______________", "answer": "houses" },
+          { "id": "comp2", "text": "Bathroom is _______________", "answer": "shared" },
+          { "id": "comp3", "text": "Outside area: a _______________", "answer": "garden" },
+          { "id": "comp4", "text": "Towels are NOT _______________", "answer": "provided" },
+          { "id": "comp5", "text": "Student's activity: _______________", "answer": "internship" }
+        ]
+      },
+      "vocabCollocation": "summer housing, bills included, shared kitchen, house manager, bed linen, overnight guests"
+    },
+	"Case 13 – Long-term lease negotiation": {
+      "script": "Agent: Rental Solutions, how can I assist?\nTenant: I want to rent a 2-bedroom house for 2 years, starting November.\nAgent: We have a semi-detached in Greenfield. Rent £1300 per month, unfurnished.\nTenant: Can I negotiate the rent? I can offer £1200 for a 2-year contract.\nAgent: Let me ask the landlord. Also, standard deposit is 5 weeks' rent.\nTenant: What about pets? I have a small dog.\nAgent: Possibly with an extra £200 pet deposit.\nTenant: And repairs?\nAgent: Landlord covers structural and appliances; tenant handles minor repairs.\nTenant: I'll wait for the rent reply.\nAgent: I'll call you tomorrow.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "What type of house is it?", "options": ["detached", "semi-detached", "terraced"], "answer": "semi-detached" },
+          { "id": "mcq2", "text": "What is the standard deposit?", "options": ["4 weeks' rent", "5 weeks' rent", "6 weeks' rent"], "answer": "5 weeks' rent" },
+          { "id": "mcq3", "text": "Who covers structural repairs?", "options": ["tenant", "landlord", "agent"], "answer": "landlord" }
+        ],
+        "matching": {
+          "instructions": "Match the amount or term.",
+          "items": [
+            { "id": "match1", "text": "Initial asking rent", "options": ["£1200", "£1300", "£1400"], "answer": "£1300" },
+            { "id": "match2", "text": "Tenant's offer", "options": ["£1150", "£1200", "£1250"], "answer": "£1200" },
+            { "id": "match3", "text": "Pet deposit (extra)", "options": ["£150", "£200", "£250"], "answer": "£200" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Lease length: _______________ years", "answer": "2" },
+          { "id": "comp2", "text": "Start month: _______________", "answer": "November" },
+          { "id": "comp3", "text": "House is _______________ (furnished/unfurnished)", "answer": "unfurnished" },
+          { "id": "comp4", "text": "Tenant handles _______________ repairs", "answer": "minor" },
+          { "id": "comp5", "text": "Agent will call _______________", "answer": "tomorrow" }
+        ]
+      },
+      "vocabCollocation": "long-term lease, semi-detached, unfurnished, pet deposit, structural repairs, negotiation"
+    },
+	"Case 14 – Emergency temporary housing": {
+      "script": "Case worker: Emergency Housing Line.\nCaller: My apartment flooded. I need a place for 2 weeks starting tonight.\nWorker: We have a basic room in a shelter with shared facilities. No cost.\nCaller: Is it private?\nWorker: Private room but shared bathroom and kitchen. There's a curfew at 11 p.m.\nCaller: Can I cook?\nWorker: Yes, kitchen open until 9 p.m. Food pantry available.\nCaller: What about my small dog?\nWorker: We accept service animals only, sorry.\nCaller: I understand. I'll come tonight.\nWorker: Bring ID and any medication. We'll do an intake form.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "Why does the caller need housing?", "options": ["fire", "flood", "eviction"], "answer": "flood" },
+          { "id": "mcq2", "text": "How long is the stay offered?", "options": ["1 week", "2 weeks", "1 month"], "answer": "2 weeks" },
+          { "id": "mcq3", "text": "Is the room free?", "options": ["yes", "no", "depends on income"], "answer": "yes" }
+        ],
+        "matching": {
+          "instructions": "Match the facility or rule.",
+          "items": [
+            { "id": "match1", "text": "Curfew time", "options": ["10 p.m.", "11 p.m.", "12 a.m."], "answer": "11 p.m." },
+            { "id": "match2", "text": "Kitchen closing time", "options": ["8 p.m.", "9 p.m.", "10 p.m."], "answer": "9 p.m." },
+            { "id": "match3", "text": "Pets allowed", "options": ["all", "cats only", "service animals only"], "answer": "service animals only" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Type of facility: _______________", "answer": "shelter" },
+          { "id": "comp2", "text": "Room type: private, but facilities _______________", "answer": "shared" },
+          { "id": "comp3", "text": "Food available from _______________ pantry", "answer": "food" },
+          { "id": "comp4", "text": "Caller must bring _______________", "answer": "ID" },
+          { "id": "comp5", "text": "Also bring any _______________", "answer": "medication" }
+        ]
+      },
+      "vocabCollocation": "emergency housing, flooded, shelter, curfew, food pantry, intake form"
+    },
+	"Case 15 – Corporate housing for relocating employee": {
+      "script": "Coordinator: ReloStay, good morning.\nHR: We need a 2-bedroom furnished apartment for an employee relocating from Paris. Stay: 3 months from Sept 1.\nCoordinator: We have one in the financial district at £2200 per month, all utilities and weekly cleaning included.\nHR: Is there parking?\nCoordinator: Secure underground parking £100 extra per month.\nHR: What about internet and TV?\nCoordinator: 500Mbps fibre and Netflix included.\nHR: Can the employee check in early? August 30?\nCoordinator: Yes, no extra charge if available.\nHR: Great. Send the contract.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "How long is the corporate stay?", "options": ["2 months", "3 months", "4 months"], "answer": "3 months" },
+          { "id": "mcq2", "text": "What is included in the rent?", "options": ["utilities only", "utilities and cleaning", "utilities, cleaning, internet, Netflix"], "answer": "utilities, cleaning, internet, Netflix" },
+          { "id": "mcq3", "text": "Extra cost for parking", "options": ["£50", "£100", "£150"], "answer": "£100" }
+        ],
+        "matching": {
+          "instructions": "Match the detail.",
+          "items": [
+            { "id": "match1", "text": "Monthly rent (excluding parking)", "options": ["£2000", "£2200", "£2400"], "answer": "£2200" },
+            { "id": "match2", "text": "Internet speed", "options": ["200Mbps", "500Mbps", "1Gbps"], "answer": "500Mbps" },
+            { "id": "match3", "text": "Cleaning frequency", "options": ["daily", "weekly", "biweekly"], "answer": "weekly" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Employee relocating from _______________", "answer": "Paris" },
+          { "id": "comp2", "text": "Apartment area: _______________ district", "answer": "financial" },
+          { "id": "comp3", "text": "Parking type: secure _______________ parking", "answer": "underground" },
+          { "id": "comp4", "text": "Streaming service: _______________", "answer": "Netflix" },
+          { "id": "comp5", "text": "Early check-in date: August _______________", "answer": "30" }
+        ]
+      },
+      "vocabCollocation": "corporate housing, relocating, furnished apartment, utilities included, underground parking, Netflix"
+    },
+	"Case 16 – Renting a room in a retirement community": {
+      "script": "Manager: Silver Pines Community.\nSenior: I'm looking for a single room with ensuite, for long-term.\nManager: We have a vacancy in the east wing. Rent £650 per month, includes all meals and weekly housekeeping.\nSenior: Is there a nurse on site?\nManager: Yes, 24/7. Also emergency call buttons in each room.\nSenior: What activities?\nManager: Bingo, gentle yoga, and a library.\nSenior: Can I have visitors overnight?\nManager: Yes, but they must sign in and pay £15 per night for meals.\nSenior: Sounds good. How do I apply?\nManager: Fill out a health questionnaire and provide references.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "What type of room does the senior want?", "options": ["single with shared bath", "single with ensuite", "double with ensuite"], "answer": "single with ensuite" },
+          { "id": "mcq2", "text": "What is included in the rent?", "options": ["meals only", "meals and housekeeping", "meals, housekeeping, medical"], "answer": "meals and housekeeping" },
+          { "id": "mcq3", "text": "Overnight visitor meal cost", "options": ["£10", "£15", "£20"], "answer": "£15" }
+        ],
+        "matching": {
+          "instructions": "Match the service or rule.",
+          "items": [
+            { "id": "match1", "text": "Monthly rent", "options": ["£600", "£650", "£700"], "answer": "£650" },
+            { "id": "match2", "text": "Nurse availability", "options": ["9-5", "24/7", "on call"], "answer": "24/7" },
+            { "id": "match3", "text": "One activity mentioned", "options": ["swimming", "yoga", "cards"], "answer": "yoga" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Community name: _______________ Pines", "answer": "Silver" },
+          { "id": "comp2", "text": "Room has emergency _______________ buttons", "answer": "call" },
+          { "id": "comp3", "text": "Also a _______________", "answer": "library" },
+          { "id": "comp4", "text": "Visitors must sign _______________", "answer": "in" },
+          { "id": "comp5", "text": "Need a health _______________", "answer": "questionnaire" }
+        ]
+      },
+      "vocabCollocation": "retirement community, ensuite, all meals, housekeeping, emergency call, health questionnaire"
+    },
+	"Case 17 – Subletting a room for summer": {
+      "script": "Student: Hi, I saw your ad for a summer sublet.\nCurrent tenant: Yes, I'm subletting my room from June 1 to August 31. Rent £400 per month.\nStudent: Is it close to the university?\nTenant: 10 minutes walk. The room is in a 4-bed flat, but others will be away.\nStudent: So I'll have the flat mostly to myself?\nTenant: Yes, one other student might stay for July only.\nStudent: What about bills?\nTenant: £50 extra per month for electricity, water, internet.\nStudent: Can I see the room?\nTenant: Sure, this Saturday at 11 a.m.\nStudent: Do I need to sign a sublease agreement?\nTenant: Yes, and pay one month deposit.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "When does the sublet end?", "options": ["July 31", "August 31", "September 30"], "answer": "August 31" },
+          { "id": "mcq2", "text": "How many flatmates will be present most of the time?", "options": ["none", "one", "two"], "answer": "none" },
+          { "id": "mcq3", "text": "What is the deposit?", "options": ["£400", "£450", "£500"], "answer": "£400" }
+        ],
+        "matching": {
+          "instructions": "Match the cost or detail.",
+          "items": [
+            { "id": "match1", "text": "Base rent per month", "options": ["£350", "£400", "£450"], "answer": "£400" },
+            { "id": "match2", "text": "Extra bills per month", "options": ["£40", "£50", "£60"], "answer": "£50" },
+            { "id": "match3", "text": "Distance to university", "options": ["5 min walk", "10 min walk", "15 min walk"], "answer": "10 min walk" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Flat size: _______________ bedrooms", "answer": "4" },
+          { "id": "comp2", "text": "Another student may stay in _______________ only", "answer": "July" },
+          { "id": "comp3", "text": "Viewing day: _______________", "answer": "Saturday" },
+          { "id": "comp4", "text": "Viewing time: _______________ a.m.", "answer": "11" },
+          { "id": "comp5", "text": "Must sign a _______________ agreement", "answer": "sublease" }
+        ]
+      },
+      "vocabCollocation": "subletting, summer sublet, flatmates, bills extra, deposit, sublease agreement"
+    },
+	"Case 18 – Pet-friendly rental search": {
+      "script": "Agent: Pet-Friendly Rentals, how can I help?\nClient: I need a 1-bedroom apartment that allows two cats. Budget up to £1000.\nAgent: I have a ground-floor flat in Victoria Park. Rent £950, plus £25 monthly pet fee per cat.\nClient: Is there a garden?\nAgent: Small patio, enclosed. The flat has wooden floors (good for cats).\nClient: What about a pet deposit?\nAgent: One-time £200 pet deposit. Also, the landlord requires a pet reference.\nClient: My cats are indoor-only and neutered.\nAgent: That's perfect. Can you view tomorrow at 4 p.m.?\nClient: Yes, thank you.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "How many cats does the client have?", "options": ["1", "2", "3"], "answer": "2" },
+          { "id": "mcq2", "text": "What is the monthly pet fee per cat?", "options": ["£15", "£20", "£25"], "answer": "£25" },
+          { "id": "mcq3", "text": "What type of floor does the flat have?", "options": ["carpet", "wooden", "tile"], "answer": "wooden" }
+        ],
+        "matching": {
+          "instructions": "Match the fee or feature.",
+          "items": [
+            { "id": "match1", "text": "Rent without pet fees", "options": ["£900", "£950", "£1000"], "answer": "£950" },
+            { "id": "match2", "text": "One-time pet deposit", "options": ["£150", "£200", "£250"], "answer": "£200" },
+            { "id": "match3", "text": "Outdoor area", "options": ["balcony", "patio", "garden"], "answer": "patio" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Location: _______________ Park", "answer": "Victoria" },
+          { "id": "comp2", "text": "Flat type: ground-_______________", "answer": "floor" },
+          { "id": "comp3", "text": "Outdoor area is _______________", "answer": "enclosed" },
+          { "id": "comp4", "text": "Cats are indoor-only and _______________", "answer": "neutered" },
+          { "id": "comp5", "text": "Viewing time: _______________ p.m.", "answer": "4" }
+        ]
+      },
+      "vocabCollocation": "pet-friendly, monthly pet fee, pet deposit, ground-floor, enclosed patio, pet reference"
+    },
+	"Case 19 – Renting a luxury penthouse": {
+      "script": "Broker: Luxury Living Realty, good evening.\nClient: I'm interested in the penthouse overlooking the river. For 1 year, starting September.\nBroker: Excellent choice. Rent is £4500 per month, including concierge, gym, pool and two parking spaces.\nClient: Is the penthouse furnished?\nBroker: It comes with designer furniture, but we can remove if you prefer your own.\nClient: I'll keep the furniture. What about utilities?\nBroker: Electricity and gas separate, approx £250. Water and heating included.\nClient: Can I have a private rooftop terrace?\nBroker: Yes, with a hot tub and barbecue. Also a home cinema room.\nClient: I'll take it. Let's sign tomorrow.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "What is included in the rent?", "options": ["concierge and gym", "concierge, gym, pool, parking", "concierge, gym, pool, parking, utilities"], "answer": "concierge, gym, pool, parking" },
+          { "id": "mcq2", "text": "Which utility is NOT included?", "options": ["water", "heating", "electricity"], "answer": "electricity" },
+          { "id": "mcq3", "text": "What feature does the rooftop have?", "options": ["sauna", "hot tub", "swimming pool"], "answer": "hot tub" }
+        ],
+        "matching": {
+          "instructions": "Match the detail.",
+          "items": [
+            { "id": "match1", "text": "Monthly rent", "options": ["£4000", "£4500", "£5000"], "answer": "£4500" },
+            { "id": "match2", "text": "Number of parking spaces", "options": ["one", "two", "three"], "answer": "two" },
+            { "id": "match3", "text": "Extra utility estimate", "options": ["£200", "£250", "£300"], "answer": "£250" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Penthouse view: overlooking the _______________", "answer": "river" },
+          { "id": "comp2", "text": "Lease starts in _______________", "answer": "September" },
+          { "id": "comp3", "text": "Furniture is _______________", "answer": "designer" },
+          { "id": "comp4", "text": "Has a home _______________ room", "answer": "cinema" },
+          { "id": "comp5", "text": "Signing planned for _______________", "answer": "tomorrow" }
+        ]
+      },
+      "vocabCollocation": "luxury penthouse, concierge, designer furniture, hot tub, home cinema, utilities separate"
+    },
+	"Case 20 – Renting a countryside cottage": {
+      "script": "Owner: Hello, Cotswold Cottages.\nGuest: I'm looking for a 2-bedroom cottage for a month, October. Quiet, with a fireplace.\nOwner: We have 'Rose Cottage' available. Rent £1100 per week, but monthly discount makes it £3800.\nGuest: Does it have a wood-burning stove?\nOwner: Yes, and central heating. Also a large garden with a stream.\nGuest: Is there wifi?\nOwner: Yes, but it's a bit slow (15Mbps). Good for emails, not streaming.\nGuest: Pets?\nOwner: One well-behaved dog allowed, no extra charge.\nGuest: What about the deposit?\nOwner: £400, refundable if no damage.\nGuest: Perfect. I'll book for Oct 1-31.",
+      "questions": {
+        "mcq": [
+          { "id": "mcq1", "text": "What is the name of the cottage?", "options": ["Lavender Cottage", "Rose Cottage", "Mill Cottage"], "answer": "Rose Cottage" },
+          { "id": "mcq2", "text": "What is the monthly rent after discount?", "options": ["£3600", "£3800", "£4000"], "answer": "£3800" },
+          { "id": "mcq3", "text": "Internet speed", "options": ["5Mbps", "15Mbps", "25Mbps"], "answer": "15Mbps" }
+        ],
+        "matching": {
+          "instructions": "Match the feature or cost.",
+          "items": [
+            { "id": "match1", "text": "Weekly rent before discount", "options": ["£1000", "£1100", "£1200"], "answer": "£1100" },
+            { "id": "match2", "text": "Deposit amount", "options": ["£300", "£400", "£500"], "answer": "£400" },
+            { "id": "match3", "text": "Pet policy", "options": ["no pets", "one dog free", "cats only"], "answer": "one dog free" }
+          ]
+        },
+        "completion": [
+          { "id": "comp1", "text": "Cottage location: _______________", "answer": "Cotswold" },
+          { "id": "comp2", "text": "Heating type: wood-burning stove and central _______________", "answer": "heating" },
+          { "id": "comp3", "text": "Garden has a _______________", "answer": "stream" },
+          { "id": "comp4", "text": "WiFi suitable for _______________", "answer": "emails" },
+          { "id": "comp5", "text": "Booking dates: October 1 to _______________", "answer": "31" }
+        ]
+      },
+      "vocabCollocation": "countryside cottage, monthly discount, wood-burning stove, refundable deposit, stream, slow wifi"
+    }
+
+                // Thêm các case khác (Case 3 ... Case 20) tương tự
+            }
+        },
+        // Có thể thêm chủ đề khác nếu cần
+	"Travel/Transport": {cases: {}},
+	"Shopping/ Services": {cases: {}},
+	"Leisure/ Events": {cases: {}},
+	"Work/ Study": {cases: {}}
+    }
+	
+},
+        part2: { name: "Part 2 – Monologue", topics: {
+	"Tourist attractions": {cases: {}},
+	"Facility/ Local services": {cases: {}},
+	"Company/ Organization introduction": {cases: {}},
+	"Event/ Festival announcement": {cases: {}},
+	"Health/ Safety instructions": {cases: {}} 	
+} },
+        part4: { name: "Part 4 – Lecture", topics: {
+	"Environment/ Climate change": {cases: {}},
+	"History/ Archaeology": {cases: {}},
+	"Biology/ Animal behavior": {cases: {}},
+	"Business/ Econnomics": {cases: {}},
+	"Technology/ Innovation": {cases: {}},
+	"Health/ Medicine": {cases: {}},
+	"Education/ Psychology": {cases: {}},
+	"Sociology/ Urban planning": {cases: {}}
+} }
+    };
+
+    // For demo, we only have one topic with one case inside part3
+    // To make dropdown work, populate part3 topic list with 5 topics (some have dummy cases)
+    const topicNames = [
+        "Environmental Science Project", 
+        "Renewable Energy Debate", 
+        "Marketing Research Interview", 
+        "Psychology Study Design", 
+        "Urban Planning Fieldwork"
+    ];
+    // ensure that each topic at least has an empty case structure (for display)
+    topicNames.forEach(topic => {
+        if (!LISTENING_DB.part3.topics[topic]) {
+            LISTENING_DB.part3.topics[topic] = { cases: {} };
+        }
+        // add at least one dummy case for topics that have no real data
+        if (Object.keys(LISTENING_DB.part3.topics[topic].cases).length === 0) {
+            LISTENING_DB.part3.topics[topic].cases = {
+                "Case 1 – Example script": {
+                    script: "This is a placeholder script for topic: " + topic + ". Please add full script later.",
+                    questions: {
+                        mcq: [{ id: "mcq_dummy", text: "Sample MCQ question", options: ["A", "B", "C"], answer: "A" }],
+                        matching: { items: [{ id: "dm", text: "Dummy match", options: ["opt1"], answer: "opt1" }] },
+                        completion: [{ id: "dc", text: "Fill blank: _______________", answer: "example" }],
+                        sentenceCompletion: [],
+                        shortAnswer: []
+                    },
+                    vocabCollocation: "temp vocabulary"
+                }
+            };
+        }
+    });
+
+    // populate part dropdown (only part3 is filled for demo, but we show all 4)
+    const partSelect = document.getElementById('partSelect');
+    const topicSelect = document.getElementById('topicSelect');
+    const caseSelect = document.getElementById('caseSelect');
+    const scriptContainer = document.getElementById('scriptText');
+    const questionsContainer = document.getElementById('questionsContainer');
+    const feedbackDiv = document.getElementById('feedbackArea');
+
+    let currentPartKey = 'part3';      // default part3
+    let currentTopicName = topicNames[0];
+    let currentCaseKey = 'Case 1 – Carbon footprint survey';   // only valid for first topic
+
+    // ---- helper: get current case object ----
+    function getCurrentCase() {
+        const part = LISTENING_DB[currentPartKey];
+        if (!part) return null;
+        const topic = part.topics[currentTopicName];
+        if (!topic) return null;
+        const caseObj = topic.cases[currentCaseKey];
+        return caseObj || null;
+    }
+
+    // ---- populate part dropdown (show part1-part4) ----
+    function populateParts() {
+        const parts = ['part1', 'part2', 'part3', 'part4'];
+        partSelect.innerHTML = '';
+        parts.forEach(part => {
+            const opt = document.createElement('option');
+            opt.value = part;
+            let label = '';
+            if (part === 'part1') label = 'Part 1 – Form/Note/Table/MCQ/Matching';
+            else if (part === 'part2') label = 'Part 2 – Note/Sentence/MCQ/Matching/Map/Diagram';
+            else if (part === 'part3') label = 'Part 3 – MCQ/Matching/Completion/Short Answer';
+            else label = 'Part 4 – Summary/MCQ/Table/Short Answer';
+            opt.textContent = label;
+            if (part === currentPartKey) opt.selected = true;
+            partSelect.appendChild(opt);
+        });
+    }
+
+    // refresh topic dropdown based on selected part (only part3 has data, rest are placeholders)
+    function populateTopics() {
+        const partData = LISTENING_DB[currentPartKey];
+        if (!partData || !partData.topics) {
+            topicSelect.innerHTML = '<option>No topics</option>';
+            return;
+        }
+        const topicKeys = Object.keys(partData.topics);
+        topicSelect.innerHTML = '';
+        topicKeys.forEach(topic => {
+            const opt = document.createElement('option');
+            opt.value = topic;
+            opt.textContent = topic;
+            if (topic === currentTopicName) opt.selected = true;
+            topicSelect.appendChild(opt);
+        });
+        if (topicKeys.length === 0) {
+            topicSelect.innerHTML = '<option>No topics</option>';
+        }
+        populateCases();
+    }
+
+    // populate case dropdown from current topic (1-20 cases but we may have less)
+    function populateCases() {
+        const partData = LISTENING_DB[currentPartKey];
+        if (!partData || !partData.topics[currentTopicName]) {
+            caseSelect.innerHTML = '<option>No cases</option>';
+            return;
+        }
+        const casesObj = partData.topics[currentTopicName].cases;
+        const caseKeys = Object.keys(casesObj);
+        caseSelect.innerHTML = '';
+        if (caseKeys.length === 0) {
+            const dummyOpt = document.createElement('option');
+            dummyOpt.textContent = 'No cases';
+            caseSelect.appendChild(dummyOpt);
+            return;
+        }
+        caseKeys.forEach(ck => {
+            const opt = document.createElement('option');
+            opt.value = ck;
+            opt.textContent = ck;
+            if (ck === currentCaseKey) opt.selected = true;
+            caseSelect.appendChild(opt);
+        });
+        // sync currentCaseKey
+        if (!caseKeys.includes(currentCaseKey) && caseKeys.length) currentCaseKey = caseKeys[0];
+        renderCurrentCase();
+    }
+
+    // ---- render script + questions + vocabs ----
+    function renderCurrentCase() {
+        const caseData = getCurrentCase();
+        if (!caseData) {
+            scriptContainer.innerText = 'No script available for this selection.';
+            questionsContainer.innerHTML = '<div class="question-item">No questions defined.</div>';
+            feedbackDiv.innerHTML = '';
+            return;
+        }
+        // script
+        scriptContainer.innerText = caseData.script || '(script missing)';
+        
+        // build questions HTML based on question types (Part 3 has all: MCQ, matching, completion, sentence completion, short answer)
+        const q = caseData.questions;
+        let html = '';
+        
+        // ----- MCQ section -----
+        if (q.mcq && q.mcq.length) {
+            html += `<div class="question-group"><h4>MULTIPLE CHOICE</h4>`;
+            q.mcq.forEach((mcqItem, idx) => {
+                html += `<div class="question-item" data-type="mcq" data-idx="${idx}" data-answer="${mcqItem.answer}">
+                            <div class="question-text">${mcqItem.text}</div>
+                            <div class="mcq-group">`;
+                mcqItem.options.forEach(opt => {
+                    html += `<label><input type="radio" name="mcq_${idx}" value="${opt}"> ${opt}</label>`;
+                });
+                html += `</div></div>`;
+            });
+            html += `</div>`;
+        }
+        
+        // ----- MATCHING section (dropdowns) -----
+        if (q.matching && q.matching.items && q.matching.items.length) {
+            html += `<div class="question-group"><h4>MATCHING</h4>`;
+            q.matching.items.forEach((matchItem, idx) => {
+                html += `<div class="question-item" data-type="matching" data-idx="${idx}" data-answer="${matchItem.answer}">
+                            <div class="question-text">${matchItem.text}</div>
+                            <select class="match-select" data-correct="${matchItem.answer}">
+                                <option value="">-- select --</option>`;
+                matchItem.options.forEach(opt => {
+                    html += `<option value="${opt}">${opt}</option>`;
+                });
+                html += `</select></div>`;
+            });
+            html += `</div>`;
+        }
+        
+        // ----- completion (fill in blank) textbox -----
+        if (q.completion && q.completion.length) {
+            html += `<div class="question-group"><h4>NOTE / TABLE COMPLETION</h4>`;
+            q.completion.forEach((comp, idx) => {
+                html += `<div class="question-item" data-type="completion" data-idx="${idx}" data-answer="${comp.answer.toLowerCase()}">
+                            <div class="question-text">${comp.text}</div>
+                            <input type="text" class="fill-input" placeholder="type answer" data-correct="${comp.answer.toLowerCase()}">
+                        </div>`;
+            });
+            html += `</div>`;
+        }
+        
+        // ----- sentence completion (also textbox, but separate semantic) -----
+        if (q.sentenceCompletion && q.sentenceCompletion.length) {
+            html += `<div class="question-group"><h4>SENTENCE COMPLETION</h4>`;
+            q.sentenceCompletion.forEach((sent, idx) => {
+                html += `<div class="question-item" data-type="sentComp" data-idx="${idx}" data-answer="${sent.answer.toLowerCase()}">
+                            <div class="question-text">${sent.text}</div>
+                            <input type="text" class="fill-input" data-correct="${sent.answer.toLowerCase()}">
+                        </div>`;
+            });
+            html += `</div>`;
+        }
+        
+        // ----- short answer questions (textbox) -----
+        if (q.shortAnswer && q.shortAnswer.length) {
+            html += `<div class="question-group"><h4>SHORT ANSWER QUESTIONS</h4>`;
+            q.shortAnswer.forEach((short, idx) => {
+                html += `<div class="question-item" data-type="short" data-idx="${idx}" data-answer="${short.answer.toLowerCase()}">
+                            <div class="question-text">${short.text}</div>
+                            <input type="text" class="fill-input" data-correct="${short.answer.toLowerCase()}">
+                        </div>`;
+            });
+            html += `</div>`;
+        }
+        
+        // vocabulary and collocation (display)
+        if (caseData.vocabCollocation) {
+            html += `<div class="question-group"><h4>VOCABULARY & COLLOCATION</h4>
+                        <div style="background:#f9f9ea; padding:0.8rem; border-left:4px solid black;">${caseData.vocabCollocation}</div>
+                    </div>`;
+        }
+        
+        questionsContainer.innerHTML = html;
+        feedbackDiv.innerHTML = ''; // reset feedback
+    }
+
+    // ---- CHECK ANSWERS: only if all questions are answered-----
+    function checkAllAnswers() {
+        // get all question widgets: radio groups (each group must have one selected), matching selects must have non-empty, fill inputs must not be empty
+        let allAnswered = true;
+        const radioGroups = new Set();
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            const name = radio.getAttribute('name');
+            if (name) radioGroups.add(name);
+        });
+        // for each radio group, check at least one checked
+        for (let groupName of radioGroups) {
+            const checked = document.querySelector(`input[name="${groupName}"]:checked`);
+            if (!checked) {
+                allAnswered = false;
+                break;
+            }
+        }
+        // check matching selects
+        const matchSelects = document.querySelectorAll('.match-select');
+        for (let sel of matchSelects) {
+            if (!sel.value) {
+                allAnswered = false;
+                break;
+            }
+        }
+        // check fill inputs
+        const fillInputs = document.querySelectorAll('.fill-input');
+        for (let inp of fillInputs) {
+            if (!inp.value.trim()) {
+                allAnswered = false;
+                break;
+            }
+        }
+        
+        if (!allAnswered) {
+            feedbackDiv.innerHTML = '<div class="warning-note">⚠️ CHECK FAILED: Please answer all questions before verification.</div>';
+            return false;
+        }
+        return true;
+    }
+    
+    // Evaluate answers and display results
+    function evaluateAnswers() {
+        if (!checkAllAnswers()) return;
+        
+        let resultHtml = '<div><strong>RESULT VERIFICATION</strong><br>';
+        let correctCount = 0;
+        let totalCount = 0;
+        
+        // MCQ evaluation
+        const mcqItems = document.querySelectorAll('.question-item[data-type="mcq"]');
+        mcqItems.forEach(item => {
+            totalCount++;
+            const idx = item.getAttribute('data-idx');
+            const correctAns = item.getAttribute('data-answer');
+            const selectedRadio = item.querySelector(`input[type="radio"]:checked`);
+            const userChoice = selectedRadio ? selectedRadio.value : '';
+            if (userChoice === correctAns) {
+                correctCount++;
+                resultHtml += `✅ MCQ "${item.querySelector('.question-text').innerText}": correct (${correctAns})<br>`;
+            } else {
+                resultHtml += `❌ MCQ "${item.querySelector('.question-text').innerText}": wrong (your: ${userChoice || 'none'}, correct: ${correctAns})<br>`;
+            }
+        });
+        
+        // Matching evaluation
+        const matchItems = document.querySelectorAll('.question-item select.match-select');
+        matchItems.forEach(select => {
+            totalCount++;
+            const correctAns = select.getAttribute('data-correct');
+            const selectedVal = select.value;
+            const parentDiv = select.closest('.question-item');
+            const qText = parentDiv.querySelector('.question-text').innerText;
+            if (selectedVal === correctAns) {
+                correctCount++;
+                resultHtml += `✅ Matching "${qText}": correct (${correctAns})<br>`;
+            } else {
+                resultHtml += `❌ Matching "${qText}": you selected "${selectedVal}", correct: ${correctAns}<br>`;
+            }
+        });
+        
+        // Fill-in blanks (completion, sentenceCompletion, shortAnswer all share .fill-input)
+        const allFill = document.querySelectorAll('.fill-input');
+        allFill.forEach(inp => {
+            totalCount++;
+            const userVal = inp.value.trim().toLowerCase();
+            const correctVal = inp.getAttribute('data-correct');
+            const parentDiv = inp.closest('.question-item');
+            const qText = parentDiv.querySelector('.question-text').innerText;
+            if (userVal === correctVal) {
+                correctCount++;
+                resultHtml += `✅ Fill: "${qText}" – correct (${correctVal})<br>`;
+            } else {
+                resultHtml += `❌ Fill: "${qText}" – your: "${userVal || 'empty'}", expected: "${correctVal}"<br>`;
+            }
+        });
+        
+        resultHtml += `<hr><strong>Total: ${correctCount} / ${totalCount} correct</strong>`;
+        if (correctCount === totalCount) resultHtml += `<br><span style="font-weight:bold;">★ PERFECT SCORE ★</span>`;
+        resultHtml += `</div>`;
+        feedbackDiv.innerHTML = resultHtml;
+    }
+    
+    // ---- event listeners for dropdowns ----
+    function updatePart() {
+        currentPartKey = partSelect.value;
+        // For demo, only part3 has extended data; for other parts we still show placeholder but structure is there
+        if (currentPartKey !== 'part3') {
+            // for parts 1,2,4 we need to show that content not yet loaded
+            // For simplicity, we set a dummy topic structure
+            if (!LISTENING_DB[currentPartKey] || Object.keys(LISTENING_DB[currentPartKey].topics).length === 0) {
+                LISTENING_DB[currentPartKey] = { name: `Part ${currentPartKey.slice(-1)}`, topics: { "Demo Topic": { cases: { "Case 1 – example": { script: "Script for part "+currentPartKey+" will be added later.", questions: { mcq: [], matching: {}, completion: [] }, vocabCollocation: "placeholder" } } } } };
+            }
+        }
+        // set to first topic in the part
+        const firstTopic = Object.keys(LISTENING_DB[currentPartKey].topics)[0];
+        if (firstTopic) currentTopicName = firstTopic;
+        populateTopics();
+    }
+    
+    function updateTopic() {
+        const newTopic = topicSelect.value;
+        if (newTopic) currentTopicName = newTopic;
+        populateCases();
+    }
+    
+    function updateCase() {
+        currentCaseKey = caseSelect.value;
+        renderCurrentCase();
+        feedbackDiv.innerHTML = '';
+    }
+    
+    partSelect.addEventListener('change', updatePart);
+    topicSelect.addEventListener('change', updateTopic);
+    caseSelect.addEventListener('change', updateCase);
+    document.getElementById('checkAnswersBtn').addEventListener('click', evaluateAnswers);
+    
+    // initialise
+    populateParts();
+    // set initial topic and case defaults
+    currentTopicName = topicNames[0];
+    currentCaseKey = "Case 1 – Carbon footprint survey";
+    populateTopics();   // this internally calls renderCurrentCase()
+    
+    // manual sync
+    renderCurrentCase();
+</script>
+</body>
+</html>
