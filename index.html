@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>IELTS MASTER HUB | BRUTALIST</title>
+  <style>
+    /* RESET & BRUTALIST CORE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #ffffff;
+      font-family: 'Courier New', 'IBM Plex Mono', 'Fira Code', monospace;
+      font-size: 18px;
+      line-height: 1.5;
+      color: #000000;
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* main container – brutal grid */
+    .brutal-container {
+      max-width: 1300px;
+      width: 100%;
+      margin: 0 auto;
+      border: 3px solid #000;
+      background: #fff;
+      box-shadow: 10px 10px 0 rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* header */
+    .brutal-header {
+      border-bottom: 3px solid #000;
+      padding: 1.8rem 2rem;
+      background: #f0f0f0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    .brutal-header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin: 0;
+      line-height: 1;
+    }
+    .brutal-header .subtitle {
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: #000;
+      color: #fff;
+      padding: 0.3rem 0.8rem;
+      margin-top: 0.3rem;
+      display: inline-block;
+    }
+
+    /* navigation menu bar – brutal style */
+    .nav-menu {
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 3px solid #000;
+      background: #fff;
+    }
+    .nav-item {
+      flex: 1;
+      min-width: 150px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      padding: 1.2rem 0.5rem;
+      border-right: 3px solid #000;
+      background: #fafafa;
+      color: #000;
+      text-decoration: none;
+      transition: none;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .nav-item:last-child {
+      border-right: none;
+    }
+    .nav-item:hover,
+    .nav-item:focus {
+      background: #000;
+      color: #fff;
+      outline: none;
+      box-shadow: inset 0 0 0 3px #fff;
+    }
+    .nav-item.active {
+      background: #000;
+      color: #fff;
+      border-bottom: 6px solid #ff4d4d;
+    }
+
+    /* icon placeholders (brutalist text symbols) */
+    .nav-icon {
+      font-size: 1.5rem;
+      font-weight: 900;
+    }
+
+    /* main content area – split into info cards */
+    .main-content {
+      padding: 2rem;
+      background: #ffffff;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .intro-card {
+      flex: 2;
+      min-width: 280px;
+      border: 2px solid #000;
+      padding: 1.5rem;
+      background: #fefefe;
+      box-shadow: 6px 6px 0 #ccc;
+    }
+    .intro-card h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      border-bottom: 3px solid #000;
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+    .intro-card p {
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .skill-grid {
+      flex: 3;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card {
+      border: 2px solid #000;
+      background: #fff;
+      padding: 1.5rem 1rem;
+      text-decoration: none;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      transition: none;
+      box-shadow: 5px 5px 0 rgba(0,0,0,0.15);
+    }
+    .skill-card:hover {
+      background: #000;
+      color: #fff;
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 #555;
+    }
+    .skill-card h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .skill-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-top: 2px solid #000;
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+    }
+    .skill-card:hover .desc {
+      border-top-color: #fff;
+    }
+
+    .feature-list {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      list-style: none;
+    }
+    .feature-list li::before {
+      content: "▹ ";
+      font-weight: bold;
+    }
+
+    footer {
+      border-top: 3px solid #000;
+      padding: 1.2rem;
+      background: #f5f5f5;
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .warning-badge {
+      background: #ff0;
+      color: #000;
+      padding: 0.1rem 0.5rem;
+      font-size: 0.7rem;
+      margin-left: 0.5rem;
+      border: 1px solid #000;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 1rem;
+      }
+      .brutal-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-menu {
+        flex-direction: column;
+      }
+      .nav-item {
+        border-right: none;
+        border-bottom: 2px solid #000;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="brutal-container">
+  <!-- HEADER -->
+  <div class="brutal-header">
+    <div>
+      <h1>IELTS MASTER HUB</h1>
+      <span class="subtitle">BRUTALIST EDITION</span>
+    </div>
+    <div style="font-weight: 700; font-size: 0.9rem; background: #fff; padding: 0.4rem 0.8rem; border: 2px solid #000;">
+      ACADEMIC · GENERAL
+    </div>
+  </div>
+
+  <!-- NAVIGATION MENU (links to sections) -->
+  <div class="nav-menu">
+    <a href="#" class="nav-item active">
+      <span class="nav-icon">⌂</span> HOME
+    </a>
+    <!-- Link to the listening test page (provided code) -->
+    <a href="listening.html" class="nav-item" target="_blank" rel="noopener">
+      <span class="nav-icon">♫</span> LISTENING
+    </a>
+    <a href="reading.html" class="nav-item" target="_blank" rel="noopener">
+      <span class="nav-icon">📖</span> READING
+    </a>
+    <a href="writing.html" class="nav-item" target="_blank" rel="noopener">
+      <span class="nav-icon">✎</span> WRITING
+    </a>
+    <a href="speaking.html" class="nav-item" target="_blank" rel="noopener">
+      <span class="nav-icon">🗣</span> SPEAKING
+    </a>
+  </div>
+
+  <!-- MAIN CONTENT: description + skill cards -->
+  <div class="main-content">
+    <div class="intro-card">
+      <h2>▸ STRUCTURE</h2>
+      <p><strong>Brutalist interface for IELTS preparation.</strong> Each module contains real test-style sections with scripts, questions, and answer validation.</p>
+      <p>Navigate using the menu above. The <strong>LISTENING</strong> module includes full Part 1–4 cases with MCQs, matching, completion, and short answers. Reading, Writing, and Speaking modules are ready for expansion.</p>
+      <div style="margin-top: 1rem; border-top: 2px solid #000; padding-top: 1rem;">
+        <span style="font-weight: 800;">CURRENT STATUS:</span>
+        <ul style="margin-top: 0.5rem; list-style: none; font-size: 0.8rem;">
+          <li>✅ Listening — 20+ cases (Accommodation, Project, etc.)</li>
+          <li>⬜ Reading — placeholder (coming soon)</li>
+          <li>⬜ Writing — task 1 & 2 framework</li>
+          <li>⬜ Speaking — part 1-3 simulator</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SKILL CARDS (direct shortcuts) -->
+    <div class="skill-grid">
+      <!-- Listening card (links to listening.html) -->
+      <a href="listening.html" target="_blank" rel="noopener" class="skill-card">
+        <h3>
+          <span>🎧</span> LISTEN
+        </h3>
+        <div style="font-weight: 700;">Parts 1–4</div>
+        <ul class="feature-list">
+          <li>Accommodation dialogues</li>
+          <li>Academic discussions</li>
+          <li>MCQ · Matching · Completion</li>
+          <li>Instant answer check</li>
+        </ul>
+        <div class="desc">20+ CASES READY</div>
+      </a>
+
+      <!-- Reading placeholder -->
+      <a href="reading.html" target="_blank" rel="noopener" class="skill-card">
+        <h3>
+          <span>📄</span> READ
+        </h3>
+        <div style="font-weight: 700;">Passages 1–3</div>
+        <ul class="feature-list">
+          <li>True/False/Not Given</li>
+          <li>Heading matching</li>
+          <li>Sentence completion</li>
+          <li>Academic & General</li>
+        </ul>
+        <div class="desc">STRUCTURE DEFINED</div>
+      </a>
+
+      <!-- Writing placeholder -->
+      <a href="writing.html" target="_blank" rel="noopener" class="skill-card">
+        <h3>
+          <span>✍️</span> WRITE
+        </h3>
+        <div style="font-weight: 700;">Task 1 & 2</div>
+        <ul class="feature-list">
+          <li>Graph description</li>
+          <li>Essay builder</li>
+          <li>Model answers</li>
+          <li>Brutalist word count</li>
+        </ul>
+        <div class="desc">COMING SOON</div>
+      </a>
+
+      <!-- Speaking placeholder -->
+      <a href="speaking.html" target="_blank" rel="noopener" class="skill-card">
+        <h3>
+          <span>💬</span> SPEAK
+        </h3>
+        <div style="font-weight: 700;">Parts 1, 2, 3</div>
+        <ul class="feature-list">
+          <li>Cue card simulator</li>
+          <li>Follow-up questions</li>
+          <li>Vocabulary prompts</li>
+          <li>Recording interface</li>
+        </ul>
+        <div class="desc">PROTOTYPE</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Additional info strip -->
+  <div style="padding: 1rem 2rem; background: #eee; border-top: 2px solid #000; display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; font-size: 0.8rem;">
+    <div><span style="font-weight: 800;">⚡ BRUTALIST PHILOSOPHY:</span> Raw, functional, no distractions.</div>
+    <div><span style="font-weight: 800;">📋 NAV:</span> Use top bar or cards to open modules (listening already live).</div>
+  </div>
+
+  <footer>
+    IELTS BRUTALIST FRAMEWORK · ALL SKILLS · ANSWER VALIDATION · MONOSPACE DOMINANCE
+  </footer>
+</div>
+
+<!-- Simple script to handle active nav state (optional) -->
+<script>
+  // Just a small script to highlight active nav if needed (for demonstration)
+  // The links point to separate pages. This page is index.html (homepage).
+  // If you want to keep the active class on home, it's already set.
+  (function() {
+    const navItems = document.querySelectorAll('.nav-item');
+    // Remove active from all, then add to the one that matches current page? 
+    // Since this is homepage, we just keep 'HOME' active.
+    // You can extend for other pages when they exist.
+    navItems.forEach(item => {
+      item.addEventListener('click', function(e) {
+        // Allow navigation, but visual update not needed across pages.
+        // If you want to simulate single-page, you'd prevent default.
+      });
+    });
+  })();
+</script>
+</body>
+</html>
